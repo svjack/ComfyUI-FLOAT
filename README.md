@@ -1,3 +1,17 @@
+```bash
+git clone https://github.com/svjack/ComfyUI-FLOAT
+pip install -r ComfyUI-FLOAT/requirements.txt
+pip install torchcodec
+
+cd ../..
+
+conda activate system
+modelscope download svjack/float --local_dir="float"
+cp -r float ComfyUI/models
+cp float/s3fd-619a316812.pth .cache/torch/hub/checkpoints/s3fd-619a316812.pth
+cp float/2DFAN4-cd938726ad.zip .cache/torch/hub/checkpoints/2DFAN4-cd938726ad.zip
+```
+
 <div align="center">
 
 # ComfyUI FLOAT 
