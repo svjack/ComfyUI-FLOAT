@@ -5,11 +5,11 @@
   "last_link_id": 29,
   "nodes": [
     {
-      "id": 11,
-      "type": "PrimitiveFloat",
+      "id": 1,
+      "type": "LoadFloatModels",
       "pos": [
-        410.1903381347656,
-        210.4737548828125
+        406.3870120788282,
+        885.3220351317192
       ],
       "size": [
         270,
@@ -21,28 +21,28 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "FLOAT",
-          "type": "FLOAT",
+          "name": "float_pipe",
+          "type": "FLOAT_PIPE",
           "links": [
-            28,
-            29
+            23
           ]
         }
       ],
-      "title": "FPS",
       "properties": {
-        "Node name for S&R": "PrimitiveFloat"
+        "aux_id": "florestefano1975/ComfyUI-FLOAT",
+        "ver": "2b82d98b1993b7576ea45c8f17e124694c1c8edd",
+        "Node name for S&R": "LoadFloatModels"
       },
       "widgets_values": [
-        25
+        "float.pth"
       ]
     },
     {
       "id": 4,
       "type": "LoadAudio",
       "pos": [
-        403.0230712890625,
-        690.6533203125
+        392.47749740921813,
+        675.3143037599993
       ],
       "size": [
         274.080078125,
@@ -63,24 +63,26 @@
         }
       ],
       "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
         "Node name for S&R": "LoadAudio"
       },
       "widgets_values": [
-        "aud-sample-vs-1.wav",
+        "王翔音频.wav",
         null,
         null
       ]
     },
     {
-      "id": 1,
-      "type": "LoadFloatModels",
+      "id": 3,
+      "type": "LoadImage",
       "pos": [
-        404.4696350097656,
-        877.6525268554688
+        396.79587796648394,
+        277.44198892898186
       ],
       "size": [
-        270,
-        58
+        274.080078125,
+        314.0000305175781
       ],
       "flags": {},
       "order": 2,
@@ -88,18 +90,26 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "float_pipe",
-          "type": "FLOAT_PIPE",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            23
+            24
           ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadFloatModels"
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
+        "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "float.pth"
+        "d05ca97b41794122b97ae8dc7c4e5098.png",
+        "image"
       ]
     },
     {
@@ -151,6 +161,8 @@
         }
       ],
       "properties": {
+        "aux_id": "florestefano1975/ComfyUI-FLOAT",
+        "ver": "2b82d98b1993b7576ea45c8f17e124694c1c8edd",
         "Node name for S&R": "FloatProcess"
       },
       "widgets_values": [
@@ -165,11 +177,46 @@
       ]
     },
     {
+      "id": 11,
+      "type": "PrimitiveFloat",
+      "pos": [
+        741.4861573132679,
+        191.68425191057307
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            28,
+            29
+          ]
+        }
+      ],
+      "title": "FPS",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
+        "Node name for S&R": "PrimitiveFloat"
+      },
+      "widgets_values": [
+        25
+      ]
+    },
+    {
       "id": 6,
       "type": "VHS_VideoCombine",
       "pos": [
-        1102.20068359375,
-        273.52789306640625
+        1139.589536440471,
+        308.9993688440644
       ],
       "size": [
         270,
@@ -219,70 +266,36 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "993082e4f2473bf4acaf06f51e33877a7eb38960",
+        "Node name for S&R": "VHS_VideoCombine",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 25,
         "loop_count": 0,
         "filename_prefix": "AnimateDiff",
-        "format": "video/nvenc_h264-mp4",
+        "format": "video/h264-mp4",
         "pix_fmt": "yuv420p",
-        "bitrate": 10,
-        "megabit": true,
+        "crf": 19,
         "save_metadata": true,
+        "trim_to_audio": false,
         "pingpong": false,
         "save_output": true,
         "videopreview": {
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00027-audio.mp4",
+            "filename": "AnimateDiff_00002-audio.mp4",
             "subfolder": "",
             "type": "output",
-            "format": "video/nvenc_h264-mp4",
+            "format": "video/h264-mp4",
             "frame_rate": 25,
-            "workflow": "AnimateDiff_00027.png",
-            "fullpath": "/workspace/ComfyUI/output/AnimateDiff_00027-audio.mp4"
+            "workflow": "AnimateDiff_00002.png",
+            "fullpath": "/home/featurize/ComfyUI/output/AnimateDiff_00002-audio.mp4"
           }
         }
       }
-    },
-    {
-      "id": 3,
-      "type": "LoadImage",
-      "pos": [
-        408.3001403808594,
-        327.2937927246094
-      ],
-      "size": [
-        274.080078125,
-        314.0000305175781
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            24
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "sam_altman_512x512.jpg",
-        "image"
-      ]
     }
   ],
   "links": [
@@ -346,11 +359,19 @@
   "groups": [],
   "config": {},
   "extra": {
-    "frontendVersion": "1.18.6",
+    "frontendVersion": "1.39.14",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true
+    "VHS_KeepIntermediate": true,
+    "workflowRendererVersion": "LG",
+    "ds": {
+      "scale": 0.8620592102895874,
+      "offset": [
+        -66.37178291206807,
+        -11.620545420183156
+      ]
+    }
   },
   "version": 0.4
 }
